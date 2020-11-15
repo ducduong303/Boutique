@@ -4,9 +4,9 @@ import CustomTitle from './CustomTitle';
 import { Link } from 'react-router-dom';
 
 function ProductAsloLike(props) {
-    const { products ,FormatSlug} = useContext(ContextProvider);
+    const { products ,FormatSlug,addToCart,user} = useContext(ContextProvider);
     const [product, setProduct] = useState([])
-
+    const [count,setCount] = useState(1);
 
     const getRelatedProduct = () => {
         const relatedProduct = products.slice(0, 4)
@@ -39,7 +39,7 @@ function ProductAsloLike(props) {
                                                     <Link to="/"> {item.title}</Link>
                                                     <p>${item.price}.00</p>
                                                 </h3>
-                                                <button className="products__content-btn">Buy</button>
+                                                <button className="products__content-btn" onClick={() =>addToCart(item,count,item.size[0],user.uid)}>Buy</button>
                                             </div>
                                         </div>
                                     </div>
