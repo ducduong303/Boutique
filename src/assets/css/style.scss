@@ -1186,7 +1186,18 @@ $color-sticker:#ff4e00;
     14.Your-cart
    ===============================================================================
 */
+// cart__empty
 
+.cart__empty{
+    padding: 10rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    button{
+        @include btn();
+    }
+}
 .your-cart{
     position: fixed;
     top: 0;
