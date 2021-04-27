@@ -569,9 +569,18 @@ $color-sticker:#ff4e00;
                 border-radius: 0;
                 width: 100%;
             }
+            textarea{
+                border: 1px solid #ccc;
+                font-size: 13px;
+                outline: 0;
+                padding: 8px 15px;
+                color: #878787;
+                border-radius: 0;
+                width: 100%;
+            }
 
             button {
-                width: 100%;
+                // width: 100%;
                 @include btn();
                 transition: 0.5s;
 

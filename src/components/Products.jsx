@@ -4,15 +4,15 @@ import Loading from './Loading';
 import { Link } from 'react-router-dom';
 import CustomTitle from './CustomTitle';
 function Products(props) {
-    const { load, products ,FormatSlug,addToCart,user} = useContext(ContextProvider)
+    const { load, products, FormatSlug, addToCart, user } = useContext(ContextProvider)
     const [visible, setVisible] = useState([8]);
-    const [count,setCount] = useState(1);
+    const [count, setCount] = useState(1);
     const [displayButtonLoad, setDisplayButtonLoad] = useState(true)
     const ShowProducts = () => {
         setVisible(prev => prev + 4);
         setDisplayButtonLoad(false)
     }
- 
+
     return (
         <>
             <CustomTitle title="TRENDING" desc="Top view in this week"></CustomTitle>
@@ -34,7 +34,7 @@ function Products(props) {
                                                         <Link to="/"> {item.title}</Link>
                                                         <p>${item.price}.00</p>
                                                     </h3>
-                                                    <button className="products__content-btn" onClick={() =>addToCart(item,count,item.size[0],user.uid)}>Buy</button>
+                                                    <button className="products__content-btn" onClick={() => addToCart(item, count, item.size[0], user.uid)}>Buy</button>
                                                 </div>
                                             </div>
                                         </div>

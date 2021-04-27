@@ -6,7 +6,7 @@ import { GoThreeBars } from 'react-icons/go';
 import { Link } from 'react-router-dom';
 import { ContextProvider } from '../context/Context';
 function Header(props) {
-    const { handleClickBar, clickBar, handleClickLogin, user, handleLogout, hanldeClickYourCart,  cartUser } = useContext(ContextProvider)
+    const { handleClickBar, clickBar, handleClickLogin, user, handleLogout, hanldeClickYourCart, cartUser } = useContext(ContextProvider)
     const Class = clickBar ? "header__nav" : "header__nav active"
 
     useEffect(() => {
@@ -25,12 +25,10 @@ function Header(props) {
                 <Link to="/"><img src={logo} alt="" className="header__logo" /></Link>
                 <div className="header__right">
                     <ul className={Class}>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/shop">Shop</Link></li>
-                        <li><Link to="/">products</Link></li>
-                        <li><Link to="/">pages</Link></li>
-                        <li><Link to="/">features</Link></li>
-                        <li><Link to="/">blog</Link></li>
+                        <li><Link activeClassName='is-active' to="/">Home</Link></li>
+                        <li><Link to="/products">products</Link></li>
+                        <li><Link to="/blog">blog</Link></li>
+                        <li><Link to="/contact">contact</Link></li>
                     </ul>
                     <div className="header__bar" onClick={handleClickBar}>
                         <GoThreeBars size={27}></GoThreeBars>
@@ -40,8 +38,7 @@ function Header(props) {
                             <BiUser size={25} ></BiUser>
                             <div className="header__login-option">
                                 <ul>
-                                    <li><h5>User: {user.displayName}</h5></li>
-                                    <li><h5>Account Information</h5></li>
+                                    <li><Link to="/profile"><h5>User: {user.displayName}</h5></Link></li>
                                     <li><h5 onClick={handleLogout}>LogOut <FiLogOut></FiLogOut></h5></li>
                                 </ul>
                             </div>
@@ -52,7 +49,7 @@ function Header(props) {
                             </div>
                     }
                     <div className="header__cart" onClick={hanldeClickYourCart}>
-                        <FiShoppingCart size={25}></FiShoppingCart><b>({  cartUser.length})</b>
+                        <FiShoppingCart size={25}></FiShoppingCart><b>({cartUser.length})</b>
 
                     </div>
                 </div>

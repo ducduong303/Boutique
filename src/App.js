@@ -22,7 +22,6 @@ const showMenu = (routers) => {
             )
         })
     }
-
     return result
 }
 

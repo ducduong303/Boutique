@@ -34,7 +34,6 @@ function Cart(props) {
                                     <div className="col_item col_6">Xóa</div>
                                 </div>
                                 <div className="cart__body">
-
                                     {
                                         cartUser.map((item, index) => {
                                             return (
